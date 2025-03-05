@@ -1,0 +1,295 @@
+/* Color Palette */
+:root {
+  --primary-bg: #000000;      /* Deep purple background */
+  --accent1: #900C3F;         /* Accent Color: dark red/maroon */
+  --accent2: #DAF7A6;         /* Secondary accent: light green */
+  --text-color: #ffffff;      /* White text */
+  --alt-bg: transparent;      /* Transparent alternate background */
+}
+
+/* Global Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Full-Screen Container for Global Background Canvas */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Left-Aligned Navigation Bar Without Boundary */
+nav {
+  background: transparent;
+  position: fixed;
+  width: auto;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 50px; /* Creates oval shape */
+  padding: 8px 25px; /* Added padding for oval shape */
+  box-shadow: 0 9px 15px rgba(171, 35, 103, 0.3); /* Optional: adds depth */
+}
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu li {
+  margin-right: 15px;
+}
+.nav-menu li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+.nav-menu li a:hover {
+  color: var(--accent1);
+}
+
+/* Section Styling */
+.section {
+  padding: 100px 0;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin-top: 60px; /* Leaves room for fixed nav */
+}
+.section.alt-bg {
+  background: var(--accent2);
+}
+.section-container {
+  background: transparent;
+  border-radius: 0;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: var(--accent1);
+}
+h3 {
+  color: var(--accent2);
+}
+
+/* Home Section */
+.home-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+.links {
+  margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 25px;
+  background: var(--accent1);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: var(--accent2);
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  flex-direction: row-reverse; /* Changed to row-reverse to swap positions */
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-image-container {
+  flex: 0 0 300px;
+  margin: 0 30px; /* Added margin to create proper spacing between image and text */
+  position: relative;
+}
+
+.profile-image {
+  width: 90%;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid var(--accent1);
+  border-radius: 19px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  flex: 5;
+  text-align: left;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.about-text p {
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+/* Experience Items */
+.experience-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-left: 4px solid var(--accent1);
+}
+.experience-item span {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: var(--accent2);
+}
+
+/* Skills Section */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.skills-list span {
+  background: var(--accent1);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+/* Projects Section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.project-card {
+  background: var(--alt-bg);
+  padding: 25px;
+  border: 2px solid var(--accent1);
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(182, 80, 119, 0.3);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  color: var(--text-color);
+  margin: 15px 0;
+}
+
+.project-card p {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* GitHub Link Button Styling */
+.github-link {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 8px 10px;
+  background: var(--accent1);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s;
+}
+.github-link:hover {
+  background: var(--primary-bg);
+}
+
+
+/* Contact Form */
+#contact-form {
+  max-width: 600px;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+}
+#contact-form input,
+#contact-form textarea {
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid var(--accent1);
+  border-radius: 0;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-color);
+}
+#contact-form button {
+  padding: 15px;
+  background: var(--accent1);
+  color: var(--text-color);
+  border: none;
+  font-size: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#contact-form button:hover {
+  background: var(--accent2);
+}
+
+/* Footer */
+footer {
+  background: transparent;
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
